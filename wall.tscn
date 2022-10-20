@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="wall" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 0, 0, 0, 376, 200, 376, 400, 376, 400, 0, 408, 0, 408, 384, 200, 384, -8, 384, -8, 0 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -8, 0, -8, -128, 408, -128, 408, 0, 400, 0, 400, -120, 0, -120, 0, -8 )

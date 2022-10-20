@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://starry sky.png" type="Texture" id=2]
+[ext_resource path="res://Background.gd" type="Script" id=3]
+[ext_resource path="res://wall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://World.gd" type="Script" id=5]
+
+[node name="World" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="GameOver" type="Label" parent="."]
+margin_left = 100.0
+margin_top = 150.0
+margin_right = 300.0
+margin_bottom = 200.0
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Health" type="Label" parent="."]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 40.0
+margin_bottom = 54.0
+valign = 1
+uppercase = true
+
+[node name="Score" type="Label" parent="."]
+margin_left = 300.0
+margin_top = 40.0
+margin_right = 360.0
+margin_bottom = 54.0
+align = 2
+valign = 1
+uppercase = true
+
+[node name="Background" type="ParallaxBackground" parent="."]
+pause_mode = 2
+script = ExtResource( 3 )
+
+[node name="BackgroundLayer" type="ParallaxLayer" parent="Background"]
+motion_mirroring = Vector2( 0, 300 )
+
+[node name="Background" type="Sprite" parent="Background/BackgroundLayer"]
+position = Vector2( 200, 150 )
+texture = ExtResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 200, 250 )
+
+[node name="wall" parent="." instance=ExtResource( 4 )]
